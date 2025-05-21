@@ -1,7 +1,25 @@
 # lib/department.py
 
 from __init__ import CURSOR, CONN
+from department import Department
 
+
+class Employee:
+
+    #dictionary of objects saved to the database.
+    all = {}
+
+    def __init__(self, name, job_title, department_id, id=None):
+        self.id = id
+        self.name = name
+        self.job_title = job_title
+        self.department_id = department_id
+
+    def __repr__(self):
+        return (
+            f"<Employee {self.id}: {self.name}, {self.job_title}, " +
+            f"Department ID: {self.department_id}>"
+        )
 
 class Department:
 
